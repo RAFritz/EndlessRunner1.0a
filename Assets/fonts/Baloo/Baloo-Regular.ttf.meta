@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 13d760767e95d4a1fbba0a3a5a838d5b
+timeCreated: 1488438516
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Baloo
+  fontNames:
+  - Baloo
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
