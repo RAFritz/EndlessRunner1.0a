@@ -24,7 +24,7 @@ public class Destroyer_L_Script : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D other) {
-		if(other.gameObject.tag == "Platform")
+		if(other.gameObject.tag != "Player")
 			Destroy (other.gameObject);
 	}
 }

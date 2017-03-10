@@ -38,9 +38,9 @@ public class PowerupManager : MonoBehaviour {
 		} else {
 			int upOrDownPower = rand.Next (0, 10);
 			if (upOrDownPower <= 4) {
-				Instantiate (powerupPrefabs [playerSpriteNum + 1], position, Quaternion.identity);
+				Instantiate (powerupPrefabs [playerSpriteNum], position, Quaternion.identity);
 			} else {
-				Instantiate (powerdownPrefabs [playerSpriteNum - 1], position, Quaternion.identity);
+				Instantiate (powerdownPrefabs [playerSpriteNum], position, Quaternion.identity);
 			}
 		}
 		spawnRate = rand.Next (5, 35);

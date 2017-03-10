@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour {
 
@@ -46,7 +47,7 @@ public class Player : MonoBehaviour {
         //Debug.Log(isGrounded + " " + rb2d.position.y);
         //if((Input.GetButtonDown("Jump") || Input.GetMouseButtonDown(0) ) && touchingPlatform)
         if (isGrounded) {
-            if (Input.GetMouseButtonDown(0)) {
+			if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject() ) {
 				rb2d.velocity = new Vector2 (direction * speed, 0f);
                 rb2d.AddForce(jumpVelocity);
             }
