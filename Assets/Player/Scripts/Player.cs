@@ -27,6 +27,10 @@ public class Player : MonoBehaviour {
 
     private bool isDead;
 
+	private int numJumps = 0;
+
+	//private bool hasDoubleJump = false;
+
 	// Use this for initialization
 	void Start () {
 		rb2d = GetComponent<Rigidbody2D> ();
@@ -44,13 +48,19 @@ public class Player : MonoBehaviour {
         txtRef.text = "Score: " + score;
         int direction = 1;
         isGrounded = gameObject.GetComponent<GroundHitCheck>().GetGrounded() && rb2d.position.y >= -2.7f;
+		if (isGrounded)
+			numJumps = 1;
+			//hasDoubleJump = true;
         //Debug.Log(isGrounded + " " + rb2d.position.y);
         //if((Input.GetButtonDown("Jump") || Input.GetMouseButtonDown(0) ) && touchingPlatform)
-        if (isGrounded) {
+		if (numJumps > 0) {
 			if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject() ) {
 				rb2d.velocity = new Vector2 (direction * speed, 0f);
                 rb2d.AddForce(jumpVelocity);
+				numJumps--;
             }
+			/*if (!isGrounded && hasDoubleJump)
+				hasDoubleJump = false;*/
         }
 		rb2d.velocity = new Vector2(direction * speed, rb2d.velocity.y);
 		//Vector2 movement = new Vector2 (1f, 0f);
@@ -97,7 +107,7 @@ public class Player : MonoBehaviour {
     public bool getIsDead()
     {
         return isDead;
-    }
+	}
 
     public void setIsDead(bool d)
     {

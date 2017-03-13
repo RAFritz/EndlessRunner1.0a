@@ -344,8 +344,8 @@ GameObject:
   - component: {fileID: 466873985}
   - component: {fileID: 466873984}
   - component: {fileID: 466873986}
-  - component: {fileID: 466873988}
   - component: {fileID: 466873987}
+  - component: {fileID: 466873988}
   - component: {fileID: 466873989}
   m_Layer: 0
   m_Name: 2D_Triangle
