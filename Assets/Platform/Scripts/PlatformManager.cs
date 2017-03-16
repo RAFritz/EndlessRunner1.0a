@@ -11,6 +11,8 @@ public class PlatformManager : MonoBehaviour {
 	public Vector3 startPosition;
 	private Vector3 nextPosition;
 
+	float platYValue;
+
 	private float distanceBetween = 2;
 
 	public float platformOffset;
@@ -33,6 +35,8 @@ public class PlatformManager : MonoBehaviour {
 	}
 
 	void GeneratePlatforms(float dB) {
+		platYValue = Random.Range (-6, -3);
+		nextPosition.y = platYValue;
 		while (nextPosition.x < player.position.x + platformOffset) {
 			Transform plat = Instantiate(prefabs[Random.Range(0, prefabs.Length)], nextPosition, Quaternion.identity);
 			nextPosition.x += plat.GetComponent<BoxCollider2D> ().bounds.size.x + dB;

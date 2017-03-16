@@ -47,7 +47,7 @@ public class Player : MonoBehaviour {
         score = (int)distanceTraveled + 7;
         txtRef.text = "Score: " + score;
         int direction = 1;
-        isGrounded = gameObject.GetComponent<GroundHitCheck>().GetGrounded() && rb2d.position.y >= -2.7f;
+        isGrounded = gameObject.GetComponent<GroundHitCheck>().GetGrounded();
 		if (isGrounded)
 			numJumps = 1;
 			//hasDoubleJump = true;

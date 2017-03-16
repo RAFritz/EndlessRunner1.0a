@@ -29,7 +29,7 @@ public class PowerupManager : MonoBehaviour {
 
 	void PowerSpawn() {
 		int playerSpriteNum = player.gameObject.GetComponent<Player> ().getSpriteNum();
-		float powerPos = (float) (0 - (2 * rand.NextDouble ()));
+		float powerPos = Random.Range(-2, 0);
 		Vector3 position = new Vector3 (player.position.x + 20f, powerPos, player.position.z);
 		if (playerSpriteNum == 0) {
 			Instantiate (powerupPrefabs [0], position, Quaternion.identity);
