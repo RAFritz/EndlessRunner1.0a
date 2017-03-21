@@ -327,10 +327,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs:
-  - {fileID: 4995050094564754, guid: 9f4ce7eba611f42d0806ff9952f8c8e5, type: 2}
-  - {fileID: 4446069042279216, guid: e1bd5220a6ea5466b97e0f8c668de79c, type: 2}
-  - {fileID: 4982532283215198, guid: d554625bd240a4708b3d86561022c369, type: 2}
-  - {fileID: 4446069042279216, guid: e1bd5220a6ea5466b97e0f8c668de79c, type: 2}
+  - {fileID: 4046191082877860, guid: d4cf6fe457f1040cabe77811160d8000, type: 2}
+  - {fileID: 4523513239271860, guid: 1d76d18f0855f4a7fb309b65d2336232, type: 2}
+  - {fileID: 4523513239271860, guid: 1d76d18f0855f4a7fb309b65d2336232, type: 2}
+  - {fileID: 4202767194899056, guid: af3b7d5b2ce1e48ec9feb729f28685d9, type: 2}
+  - {fileID: 4202767194899056, guid: af3b7d5b2ce1e48ec9feb729f28685d9, type: 2}
   player: {fileID: 466873985}
   startPosition: {x: 2.8, y: -4.9, z: 0}
   platformOffset: 20
@@ -649,7 +650,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 888252781}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73b140416860f4b4a91eea70cc98becb, type: 3}
   m_Name: 
