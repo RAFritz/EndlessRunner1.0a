@@ -26,7 +26,7 @@ public class PlatformManager : MonoBehaviour {
 		//BoxCollider2D bc2d = plat.GetComponent<BoxCollider2D> ();
 		//Debug.Log (plat.position.x + " " + bc2d.bounds.size.x);
 		//nextPosition.x += bc2d.bounds.size.x + 5;
-		InvokeRepeating("IncreaseDistance", 40, 40);
+		InvokeRepeating("IncreaseDistance", 30, 30);
 	}
 	
 	// Update is called once per frame

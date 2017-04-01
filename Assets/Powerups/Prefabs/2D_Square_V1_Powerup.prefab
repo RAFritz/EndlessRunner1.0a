@@ -62,7 +62,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 3
+  m_Constraints: 0
 --- !u!61 &61483292845247000
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -99,6 +99,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045923dbc6b4d43c986fc26192cc4f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerSprites:
+  - {fileID: 21300000, guid: fec3b222fa8b04db59bff37aad5f9906, type: 3}
+  - {fileID: 21300000, guid: bedd10f97a92c4ac196650e9533498b0, type: 3}
+  - {fileID: 21300000, guid: e4af47c5a5e9e4659bf2ff9c6fd6964b, type: 3}
+  - {fileID: 21300000, guid: 4b415271512ff4202b25d20fe3b389ab, type: 3}
+  - {fileID: 21300000, guid: 67e54a30112cc4a6a97b4869fc252f62, type: 3}
 --- !u!212 &212149561945145458
 SpriteRenderer:
   m_ObjectHideFlags: 1

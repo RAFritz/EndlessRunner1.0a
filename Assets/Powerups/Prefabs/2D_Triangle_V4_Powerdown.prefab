@@ -99,6 +99,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a31db0d9b94dd4da7b6c63e29ccabad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerSprites:
+  - {fileID: 21300000, guid: e53c2798e1920473c8f8c2eeb1e9f7f3, type: 3}
+  - {fileID: 21300000, guid: 4e0ac01deadda4b2cbe4bc0f36a1782a, type: 3}
+  - {fileID: 21300000, guid: b6088bb1290444471890b5584dab5b6e, type: 3}
+  - {fileID: 21300000, guid: 17557fec7fe60436389d53d22c77e9e1, type: 3}
+  - {fileID: 21300000, guid: 27af78c7bb88b4e3eae662b46d866bd7, type: 3}
 --- !u!212 &212656109017379596
 SpriteRenderer:
   m_ObjectHideFlags: 1

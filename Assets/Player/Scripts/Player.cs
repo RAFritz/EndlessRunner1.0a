@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.Advertisements;
 
 public class Player : MonoBehaviour {
 
@@ -13,8 +14,6 @@ public class Player : MonoBehaviour {
 	private float distanceTraveled;
 
 	private Vector2 jumpVelocity = new Vector2(0f, 300f);
-
-	//private bool touchingPlatform;
 
 	private bool isGrounded;
 
@@ -29,55 +28,38 @@ public class Player : MonoBehaviour {
 
 	private int numJumps = 0;
 
-	//private bool hasDoubleJump = false;
+	private int powerupScore;
 
 	// Use this for initialization
 	void Start () {
 		rb2d = GetComponent<Rigidbody2D> ();
-		InvokeRepeating ("SetSpeed", 40, 40);
+		InvokeRepeating ("SetSpeed", 60, 60);
         isDead = false;
-	}
-	
-	// Update is called once per frame
-	void Update () {
+		powerupScore = 0;
 	}
 
     void FixedUpdate() {
         distanceTraveled = transform.localPosition.x;
-        score = (int)distanceTraveled + 7;
+		score = (int)distanceTraveled + 7 + powerupScore;
+
         txtRef.text = "Score: " + score;
         int direction = 1;
         isGrounded = gameObject.GetComponent<GroundHitCheck>().GetGrounded();
 		if (isGrounded)
 			numJumps = 1;
-			//hasDoubleJump = true;
-        //Debug.Log(isGrounded + " " + rb2d.position.y);
-        //if((Input.GetButtonDown("Jump") || Input.GetMouseButtonDown(0) ) && touchingPlatform)
 		if (numJumps > 0) {
 			if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject() ) {
 				rb2d.velocity = new Vector2 (direction * speed, 0f);
                 rb2d.AddForce(jumpVelocity);
 				numJumps--;
             }
-			/*if (!isGrounded && hasDoubleJump)
-				hasDoubleJump = false;*/
         }
 		rb2d.velocity = new Vector2(direction * speed, rb2d.velocity.y);
-		//Vector2 movement = new Vector2 (1f, 0f);
-		//rb2d.AddForce (movement * speed);
 	}
-
-	//void OnCollisionEnter2D() {
-	//	touchingPlatform = true;
-	//}
-
-	//void OnCollisionExit2D() {
-	//	touchingPlatform = false;
-	//}
 
 	void SetSpeed() {
 		speed++;
-		if (spriteNum < playerSprites.Length) {
+		if (spriteNum < playerSprites.Length - 1) {
 			spriteNum++;
 		}
 		GetComponent<SpriteRenderer> ().sprite = playerSprites[spriteNum];
@@ -92,8 +74,13 @@ public class Player : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.tag == "Powerup") {
 			SetSpeed ();
+			if (score + powerupScore > 100)
+				powerupScore -= 100;
+			else
+				powerupScore = 0 - (int)distanceTraveled - 7;
 		} else if (other.gameObject.tag == "Powerdown") {
 			DecreaseSpeed ();
+			powerupScore += 100;
 		}
 		Destroy (other.gameObject);
 	}
@@ -113,4 +100,8 @@ public class Player : MonoBehaviour {
     {
         isDead = d;
     }
+
+	public int GetScore() {
+		return score + powerupScore;
+	}
 }

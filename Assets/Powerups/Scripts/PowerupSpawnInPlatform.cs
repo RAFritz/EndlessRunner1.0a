@@ -22,9 +22,9 @@ public class PowerupSpawnInPlatform : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag ("Player");
 		toSpawn = Random.Range (0, 40);
 		int playerSpriteNum = player.gameObject.GetComponent<Player> ().getSpriteNum();
-		if (toSpawn <= 5) {
+		if (toSpawn <= 4) {
 			x = Random.Range (-1, 7);
-			y = Random.Range (2, 4);
+			y = Random.Range (3, 5);
 			x += transform.parent.position.x;
 			y += transform.parent.position.y;
 			position = new Vector3 (x, y, z);
@@ -37,7 +37,7 @@ public class PowerupSpawnInPlatform : MonoBehaviour {
 				if (upOrDownPower <= 4) {
 					Instantiate (powerupPrefabs [playerSpriteNum], position, Quaternion.identity);
 				} else {
-					Instantiate (powerdownPrefabs [playerSpriteNum], position, Quaternion.identity);
+					Instantiate (powerdownPrefabs [playerSpriteNum - 1], position, Quaternion.identity);
 				}
 			}
 		}
