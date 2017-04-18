@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: cca24a2d5592241f1be1c14d4cdb4638
+timeCreated: 1488438518
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Diplomata SC
+  fontNames:
+  - Diplomata SC
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
